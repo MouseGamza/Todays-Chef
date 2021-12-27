@@ -29,10 +29,6 @@ export const userSlice = createSlice({
     },
     updateAccessToken: (state, action) => {
       state.accessToken = action.payload.accessToken;
-      console.log(
-        'updateAccessToken dispatch안에서 찍은 업뎃 한 후 accessToken: ',
-        state.accessToken
-      );
     },
     sumbitBechef: (state) => {
       state.isSubmit = true;

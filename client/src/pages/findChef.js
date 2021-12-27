@@ -205,7 +205,9 @@ function FindChef() {
                           })}
                         </div>
                       </ChefStar>
-                      <span>{el.rating}</span>
+                      <span>
+                        {el.rating ? Number(el.rating).toFixed(1) : 0.0}
+                      </span>
                     </li>
                   );
                 })}

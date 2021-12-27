@@ -21,8 +21,6 @@ module.exports = {
     const ratingIlikArr = findIlsik.map((el) => Number(el.dataValues.rating));
     // cuisine별 별점 찾기
 
-    console.log(ratingHansikArr);
-
     const findMaxRatingHansik = Math.max
       .apply(null, ratingHansikArr)
       .toFixed(1);
@@ -36,7 +34,7 @@ module.exports = {
     // cuisine별 최대 별점 찾기
 
     const findBestHansikChef = await chef.findOne({
-      where: { cuisine: '한식', rating: findMaxRatingHansik },
+      where: { cuisine: '한식', rating: String(findMaxRatingHansik) },
     });
     const findBestYangsikChef = await chef.findOne({
       where: { cuisine: '양식', rating: String(findMaxRatingYangsik) },
